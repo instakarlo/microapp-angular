@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "author": "instakarlo (https://github.com/instakarlo)",
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.3",
