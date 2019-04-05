@@ -2,9 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
+## References
+https://github.com/IBM/carbon-components-angular
+
+## Notes
+Note that when creating a new project in Angular 6, there is a known a build error for rxjs
+To fix, install `npm i --save rxjs@6.33` since the default installed rxjs is 6.0.0
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:6666/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
