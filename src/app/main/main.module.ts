@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
-import { NavbarModule } from '../_shared/navbar/navbar.module';
-import { SidebarModule } from '../_shared/sidebar/sidebar.module';
-
+import { UIShellModule } from 'carbon-components-angular';
 import { MainRoutingModule } from './main-routing.module';
+
 import { MainComponent } from './main.component';
+import { NavbarComponent, SidebarComponent } from './components/index';
 
 @NgModule({
-  declarations: [
-    MainComponent
-  ],
-  imports: [
-    MainRoutingModule,
-    NavbarModule,
-    SidebarModule
-  ],
-  providers: [],
-  exports: [MainComponent]
+    declarations: [
+        MainComponent,
+        NavbarComponent,
+        SidebarComponent
+    ],
+    imports: [
+        MainRoutingModule,
+        UIShellModule
+    ],
+    providers: [],
+    exports: [MainComponent]
 })
 export class MainModule { }
