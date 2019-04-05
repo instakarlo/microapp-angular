@@ -4,13 +4,11 @@ import {
 } from 'carbon-components-angular';
 
 import {
-    NavbarComponent,
     SidebarComponent
-} from './index';
+} from './sidebar.component';
 
 @NgModule({
     declarations: [
-        NavbarComponent,
         SidebarComponent
     ],
     imports: [
@@ -19,8 +17,7 @@ import {
     providers: [],
     bootstrap: [],
     exports: [
-        NavbarComponent,
         SidebarComponent
     ]
 })
-export class SharedModule { }
+export class SidebarModule { }
