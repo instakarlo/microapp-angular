@@ -3,21 +3,24 @@ import {
     UIShellModule
 } from 'carbon-components-angular';
 
-import { NavbarComponent } from './navbar/navbar.component';
+import {
+    NavbarComponent,
+    SidebarComponent
+} from './index';
 
 @NgModule({
     declarations: [
-        NavbarComponent
+        NavbarComponent,
+        SidebarComponent
     ],
     imports: [
         UIShellModule
     ],
     providers: [],
-    bootstrap: [
-        NavbarComponent
-    ],
+    bootstrap: [],
     exports: [
-        NavbarComponent
+        NavbarComponent,
+        SidebarComponent
     ]
 })
 export class SharedModule { }
