@@ -5,6 +5,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## References
 https://github.com/IBM/carbon-components-angular
 
+## Notes
+There is an error in angular.json ("es5BrowserSupport": true)
+- to fix, ensure angular-cli is > 7.3 and @angular-devkit/build-angular > 0.13
+- Ref: https://stackoverflow.com/questions/54288766/data-path-should-not-have-additional-properties-es5browsersupport
 
 ## Development server
 

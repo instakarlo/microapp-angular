@@ -125,6 +125,138 @@
           }
         }
       }
+    },
+    "table-widget": {
+      "root": "projects/table-widget/",
+      "sourceRoot": "projects/table-widget/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/table-widget",
+            "index": "projects/table-widget/src/index.html",
+            "main": "projects/table-widget/src/main.ts",
+            "polyfills": "projects/table-widget/src/polyfills.ts",
+            "tsConfig": "projects/table-widget/tsconfig.app.json",
+            "assets": [
+              "projects/table-widget/src/favicon.ico",
+              "projects/table-widget/src/assets"
+            ],
+            "styles": [
+              "projects/table-widget/src/styles.scss"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/table-widget/src/environments/environment.ts",
+                  "with": "projects/table-widget/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "table-widget:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "table-widget:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "table-widget:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/table-widget/src/test.ts",
+            "polyfills": "projects/table-widget/src/polyfills.ts",
+            "tsConfig": "projects/table-widget/tsconfig.spec.json",
+            "karmaConfig": "projects/table-widget/karma.conf.js",
+            "styles": [
+              "projects/table-widget/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/table-widget/src/favicon.ico",
+              "projects/table-widget/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/table-widget/tsconfig.app.json",
+              "projects/table-widget/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "table-widget-e2e": {
+      "root": "projects/table-widget-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/table-widget-e2e/protractor.conf.js",
+            "devServerTarget": "table-widget:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "table-widget:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/table-widget-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "microapp-angular"
